@@ -1,16 +1,16 @@
-// Array de productos (objetos)
+// Productos
 const productos = [
   { id: 1, nombre: "Cable eléctrico 10m", precio: 1200 },
   { id: 2, nombre: "Bombilla LED 15W", precio: 800 },
   { id: 3, nombre: "Interruptor simple", precio: 450 },
   { id: 4, nombre: "Toma corriente doble", precio: 600 },
-  { id: 5, nombre: "Reflector LED 50W", precio: 3500 }
+  { id: 5, nombre: "Reflector LED 50W", precio: 3500 },
+  { id: 6, nombre: "Jabalina 5/8", precio: 5500}
 ];
 
-// Carrito
 let carrito = [];
 
-// Función para mostrar menú de productos
+// Menu
 function mostrarMenu(nombre) {
   let menu = `Hola ${nombre}, selecciona un producto:\n`;
   productos.forEach(p => {
@@ -20,13 +20,11 @@ function mostrarMenu(nombre) {
   return menu;
 }
 
-// Función principal
+// función principal
 function iniciarCompra() {
-  // Pedir nombre del cliente
-  const nombre = prompt("¡Bienvenido a la Tienda de Electricidad! 🛒\nPor favor ingresa tu nombre:");
+  const nombre = prompt("Bienvenido, somos Electricidad El Faraón \nPor favor ingresa tu nombre:");
 
-  alert(`Encantado de atenderte, ${nombre}. ¡Comencemos tu compra!`);
-
+  
   let opcion;
   do {
     opcion = parseInt(prompt(mostrarMenu(nombre)));
@@ -44,7 +42,7 @@ function iniciarCompra() {
   finalizarCompra(nombre);
 }
 
-// Función para mostrar el resumen de compra
+// resumen
 function finalizarCompra(nombre) {
   if (carrito.length === 0) {
     alert(`No compraste nada, ${nombre}. ¡Te esperamos pronto!`);
@@ -63,7 +61,6 @@ function finalizarCompra(nombre) {
   alert(resumen);
 }
 
-// Inicia el programa
 iniciarCompra();
 
 
